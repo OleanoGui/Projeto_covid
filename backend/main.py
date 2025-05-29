@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from services import fetch_covid_data
+from backend.services import fetch_covid_data
 
 app = FastAPI()
 
