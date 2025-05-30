@@ -1,5 +1,7 @@
 from fastapi import FastAPI
-from backend.services import fetch_covid_data
+from services import fetch_covid_data
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = FastAPI()
 
@@ -19,3 +21,12 @@ def get_covid_data(country: str):
 def get_covid_data_default():
     data = fetch_covid_data()
     return data
+
+# Configuração do CORS para permitir requisições de qualquer origem
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
