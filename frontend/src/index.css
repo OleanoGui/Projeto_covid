@@ -1,6 +1,7 @@
-/* src/index.css */
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
+  background: #000; /* Fundo preto */
+  color: #fff;       /* Texto branco para melhor contraste */
 }
